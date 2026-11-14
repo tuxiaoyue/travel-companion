@@ -32,14 +32,14 @@ description: Helps a traveler's existing AI Agent plan and adapt trips, while re
 
 | 平台 | 当前适配方式 | 重要限制 |
 |---|---|---|
-| **Claude.ai / Claude Desktop** | 将 `travel-companion/` 文件夹打成 ZIP，ZIP 内第一层就是该文件夹；在 Customize → Skills → Create skill → Upload a skill 导入。 | 自定义 Skills 需要支持的付费方案并启用 code execution；具体资格以 Claude 帮助中心为准。 |
+| **Claude.ai（网页端）** | 将 `travel-companion/` 文件夹打成 ZIP，ZIP 内第一层就是该文件夹；在 Customize → Skills → Create skill → Upload a skill 导入。 | 自定义 Skills 需要支持的付费方案并启用 code execution；具体资格以 Claude 帮助中心为准。 |
 | **Gemini App（Spark）** | 可上传单独的 `SKILL.md`，或上传 ZIP（ZIP 主目录中直接包含 `SKILL.md`）。 | 目前是 Gemini Spark 功能；需要个人 Google 账号、18 岁以上、Google AI Pro/Ultra 和开启 Keep Activity；地区与客户端范围有限。 |
 | **Kimi** | 在 Kimi 对话中发送 GitHub 仓库链接，让 Kimi 安装开源 Skill；Kimi Work 桌面端还支持上传本地 `.md` 或 `.zip`。 | Kimi 网页端和移动端可使用 Skills；本地文件上传以 Kimi Work 桌面端文档为准。 |
 | **豆包 / 豆包工作** | 豆包工作有技能入口；如当前客户端提供“上传技能”，优先尝试单独的 `SKILL.md`。也可用本仓库的纯文本提示词版本，让豆包按对话创建个人技能。 | 豆包开放平台开发者上架是另一条流程：需企业资质、ZIP 技能包、平台检测和审核。官方开发文档不能证明普通豆包手机 App 的每个版本都支持直接导入外部 ZIP；不要把开发者上架流程与个人导入混为一谈。 |
 | **ChatGPT** | ChatGPT 桌面端可通过 Settings → Import 导入受支持 Agent 的设置和 Skills；当前官方导入文档列出 Claude Code / Claude Cowork 来源。Codex CLI 和 OpenAI Agents / Responses API 支持 Agent Skills 工作流。 | 桌面端导入不是“把 GitHub ZIP 直接上传到普通聊天”。普通 ChatGPT 对话可使用提示词回退版本。 |
 | **其他聊天产品** | 若产品没有明确的原生 Skill 导入入口，使用 `prompts/travel-companion.zh-CN.txt`，或将 `SKILL.md` 内容作为自定义指令/新对话的工作方法。 | 提示词回退不等于原生 Skill：不会自动发现、按需加载或跨对话持久保存；记忆和工具能力由宿主平台决定。 |
 
-### Claude 的 ZIP 结构
+### Claude.ai 的 ZIP 结构
 
 ```text
 travel-companion-claude.zip
@@ -97,9 +97,22 @@ Travel Companion 本身不需要外部 API、脚本或联网执行，因此适�
 
 Windsurf、Amp、Replit、Zed、Roo、Trae、Continue、Devin、Junie 等产品及其他开发 Agent 的支持情况变化较快。部分可通过通用 Skill 安装器映射到各自目录，但“安装器列出”不等于该厂商对每个版本作出官方兼容承诺。
 
+也可以使用社区维护的 `skills` CLI 将同一仓库安装到它识别的多个本机开发 Agent：
+
+```bash
+# 先确认仓库能被识别以及 Skill 名称
+npx skills add tuxiaoyue/travel-companion --list
+
+# 安装到安装器支持且本机检测到的所有 Agent（用户级）
+npx skills add tuxiaoyue/travel-companion --skill travel-companion --agent '*' --global
+```
+
+该安装器需要 Node.js（当前文档要求 Node.js 22.20+）。`--agent '*'` 只代表该安装器当前支持并识别的 Agent，不代表市场上每个 Agent。首次使用前请阅读安装器说明并检查目标目录；可用 `--copy` 避免建立符号链接。
+
 可参考：
-- [GitHub CLI: gh skill install](https://cli.github.com/manual/gh_skill_install)
+- [Vercel Skills CLI — commands and installation](https://github.com/vercel-labs/skills/blob/main/docs/commands.md)
 - [Vercel Skills installer — agent mappings](https://github.com/vercel-labs/skills/blob/main/docs/agents.md)
+- [GitHub CLI: gh skill install](https://cli.github.com/manual/gh_skill_install)
 
 若要把 Travel Companion 分发到新 Agent，先检查它是否实现 Agent Skills 标准、确认目录路径，再做实际触发测试。没有官方或可复现证据时标记为待验证，不要宣称已适配。
 
