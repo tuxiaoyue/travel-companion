@@ -2,7 +2,14 @@
 
 Thank you for helping make travel easier and more joyful for more people.
 
-Before proposing a feature or submitting a change, read the [Project Charter](CHARTER.md). The four principles—Respect Travel, Respect the Agent, Respect Memory and Respect People—are the project's foundation.
+Every contribution must uphold the four principles:
+
+- **Respect Travel:** lower the barriers to travel; do not turn a journey into a productivity contest.
+- **Respect the Agent:** add capability without replacing or hijacking the user's existing Agent.
+- **Respect Memory:** keep personal memories under the traveler's control; use consent and protect privacy.
+- **Respect People:** keep recommendations independent of advertising, commissions, sponsorship and sales funnels.
+
+Read the [Project Charter](CHARTER.md) before proposing a feature or submitting a change. These principles guide the skill, community contributions, partnerships and future commercial work.
 
 ## What we welcome
 
