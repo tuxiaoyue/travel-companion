@@ -17,3 +17,13 @@
 - Clarify contributor rights and separate permission for commercial reuse of third-party contributions.
 - Record the possible six-month free complete-trip allowance as a future product direction only; it is not implemented.
 - Leave the final repository license pending rather than publishing a license before business-use boundaries are settled.
+
+## Cross-agent compatibility update — 2026-11-14
+
+- Standardize the canonical Skill slug as `travel-companion` to match portable Skill folder naming requirements.
+- Add a compatibility guide for major chat, desktop, IDE and CLI Agents.
+- Document distinct upload layouts for Claude and Gemini rather than assuming one ZIP works everywhere.
+- Add ChatGPT desktop import, Codex/API, Kimi, Gemini Spark and Doubao Work distinctions.
+- Add platform-neutral Chinese and English prompt fallbacks.
+- Add a dependency-free package script that builds Claude, Gemini and single-Markdown upload variants from the one canonical `SKILL.md`.
+- Clarify that Skill portability does not supply live search, maps, booking, notification or durable-memory tools.
