@@ -1,7 +1,7 @@
 ---
 name: travel-companion
 description: >-
-  Travel-planning capability for the user's existing Agent. Discover a traveler's own planning order; co-create a flexible trip, adapt on-trip, and reflect afterward. Preserve user decisions and private memory without replacing the host Agent's identity, persona or tools.
+  Travel planning and trip companion for the user's existing Agent. Use when travelers explore destinations, plan or revise itineraries, compare budget, transport, food or lodging, or reflect on a completed trip. 适用于旅行目的地探索、旅行规划、行程调整、预算交通餐饮住宿、旅途陪伴、旅行回访与手账整理。 Preserve the host Agent's identity and user-controlled memory.
 compatibility: "Agent Skills-compatible Markdown directory. No scripts or platform-specific tools required; live travel tools and memory are supplied by the host Agent."
 metadata:
   version: "4.0.0"
