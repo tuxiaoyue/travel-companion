@@ -101,3 +101,23 @@ Copy the Chinese prompt into a new chat or the platform's custom-instructions ar
 ## License
 
 The repository is public while the community and commercial permissions are being finalized. **No general reuse license has been published yet.** Public visibility alone does not grant permission to redistribute, adapt or commercially use the materials. See [LICENSE-STATUS.md](LICENSE-STATUS.md) before reusing or contributing material.
+
+
+## Cross-agent compatibility
+
+Travel Companion uses one canonical `SKILL.md` and adapts only the installation package or discovery path. It is designed for the open Agent Skills format and does not replace the host Agent's identity, memory or tools.
+
+- [Platform compatibility and installation guide](docs/PLATFORM-ADAPTERS.zh-CN.md)
+- [Canonical Skill](SKILL.md)
+- [Chinese prompt fallback](prompts/travel-companion.zh-CN.txt)
+- [English prompt fallback](prompts/travel-companion.en.txt)
+
+Build platform-specific upload files from the canonical Skill:
+
+```bash
+python scripts/package-skill.py
+```
+
+This creates a Claude ZIP (folder at archive root), a Gemini ZIP (SKILL.md at archive root), and a single Markdown file. The platform guide explains which package belongs to which product and where direct import is not verified.
+
+**Compatibility does not grant missing tools.** Live search, maps, bookings, notifications, persistent memory and journal export depend on the host Agent's own capabilities and user permissions.
