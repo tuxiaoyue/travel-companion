@@ -1,7 +1,8 @@
 ---
-name: travel-planning-with-memory
+name: travel-companion
 description: >-
   Travel-planning capability for the user's existing Agent. Discover a traveler's own planning order; co-create a flexible trip, adapt on-trip, and reflect afterward. Preserve user decisions and private memory without replacing the host Agent's identity, persona or tools.
+compatibility: "Agent Skills-compatible Markdown directory. No scripts or platform-specific tools required; live travel tools and memory are supplied by the host Agent."
 metadata:
   version: "4.0.0"
   visibility: general
