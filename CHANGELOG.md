@@ -27,3 +27,5 @@
 - Add platform-neutral Chinese and English prompt fallbacks.
 - Add a dependency-free package script that builds Claude, Gemini and single-Markdown upload variants from the one canonical `SKILL.md`.
 - Clarify that Skill portability does not supply live search, maps, booking, notification or durable-memory tools.
+- Add optional bulk installation through the community-maintained Vercel Skills CLI for its detected supported coding Agents.
+- Improve the canonical description with Chinese travel-planning trigger phrases.
